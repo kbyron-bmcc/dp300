@@ -1,0 +1,55 @@
+azure_class1_notes.txt
+mon 8/12/24
+
+1. cloudlabs portal
+   https:/portal.cloudlabs.ai
+   choose sign-up > enter email address > choose pw > ... > accept usage policy
+
+2. redeem a voucher
+   https://learner-docs.cloudlabs.ai/Learner/How_to_redeem_Voucher/
+
+3. cloudlabs support before course begins
+   psm-cloudlabs@spektrasystems.com.      
+
+4. cloudlabs support during course
+   labs-support@spektrasystems.com or https://cloudlabs.ai/labs-support
+
+5. Microsoft prepared lessons
+   https://github.com/CloudLabs-MOC/dp-300-database-administrator > instructions > labs 
+
+6. Azure portal for personal use, i.e., pay-as-you-go
+   portal.azure.com
+
+7. free temporary azure portal account
+   https://azure.microsoft.com/en-us/free
+
+8. assign vouchers to students
+
+9. DP300 course material
+   https://github.com/kbyron-bmcc/dp300/blob/main/BMCC_DP300_course_2024.zip
+
+10. track attendance
+
+11. graded practice exam 
+    https://github.com/kbyron-bmcc/dp300/blob/main/dp300_practice_exam__1_graded.docx
+
+12. exam preparation hints
+    - complete 15 microsoft lab assignments
+    - learn all practice questions and answers
+    - use no references when taking a practice exam
+    - when researching an answer for a graded practice question, be certain about the answer
+    - collect a list of Microsoft references from graded practice exam; learn all "knowledge check" questions 
+    - consider purchasing a Udemy DP300 exam for additional practice
+
+13. udemy additional exam 
+    https://www.udemy.com/course/dp300-azure/
+    $14.99
+
+
+
+
+
+
+
+
+ 
