@@ -1,0 +1,28 @@
+azure_class2_notes.txt
+wed 8/14/24
+
+1. take attendance
+
+2. verify cloudlabs navigation
+ 
+3. lab 1 completion status
+
+4. graded practice exam assignments 
+    https://github.com/kbyron-bmcc/dp300/blob/main/dp300_practice_exam__1_graded.docx
+    assign 10 questions to individuals related to sessions 2 (lab 2) and 3 (labs 3 & 4)
+
+5. record scores of exams
+
+6. verify enable restart of lab; allowing 3 retakes of all labs to save time;  
+
+7. complete lab 2 
+
+8. microsoft training search:
+   example https://learn.microsoft.com/en-us/training/modules/prepare-to-maintain-sql-databases-azure/6-knowledge-check
+
+9. demo practice exam ... 
+
+
+
+
+ 
