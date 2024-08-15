@@ -19,7 +19,8 @@ wed 8/14/24
 
 8. microsoft training search:
    example https://learn.microsoft.com/en-us/training/modules/prepare-to-maintain-sql-databases-azure/6-knowledge-check
-
+           https://learn.microsoft.com/en-us/training/browse/?resource_type=module
+	   
 9. demo practice exam ... 
 
 
