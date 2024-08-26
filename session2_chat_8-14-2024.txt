@@ -1,0 +1,8 @@
+01:04:24	Sandy Chen-Quijije:	Good evening when we get to SQL setting can you elaborate more on that part
+01:06:34	Sandy Chen-Quijije:	Same thing with "RDP Port(s) open to the internet
+01:36:00	Manuel Andia:	success
+01:36:27	Minseop Han:	I would like to request access to enable a relaunch of Lab 1
+02:21:24	Kevin Byron:	https://learn.microsoft.com/en-us/training/modules/prepare-to-maintain-sql-databases-azure/6-knowledge-check
+02:22:44	Kevin Byron:	https://learn.microsoft.com/en-us/search/?terms=module
+02:24:46	Kevin Byron:	https://learn.microsoft.com/en-us/training/browse/?resource_type=module
+02:38:47	Calvin:	Can I share my screen with you I have followed the guidelines yet it keeps saying failed
