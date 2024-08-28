@@ -1,0 +1,1602 @@
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 1 of 50
+
+You have an Azure SQL Database named db1.
+
+You need to provide access to db1 for a Microsoft Entra ID user .
+
+What should you do?
+
+Select only one answer.
+
+In db1, run the CREATE USER statement with the FROM EXTERNAL PROVIDER option.
+This answer is correct.
+
+In db1, run the CREATE USER statement with the FROM LOGIN option.
+
+In the master database, run the CREATE LOGIN statement with the FROM EXTERNAL PROVIDER option.
+
+In the master database, run the CREATE LOGIN statement with the WITH PASSWORD option.
+You should use the CREATE USER statement with FROM EXTERNAL PROVIDER option in db1, as this user should have access to this database.
+
+Using the CREATE USER statement with the FROM LOGIN or WITH PASSWORD option creates a login in the master database. By default, the login does not have any access to the databases.
+
+CREATE USER (Transact-SQL) - SQL Server | Microsoft Learn
+
+Configure database authentication and authorization - Training | Microsoft Learn
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 2 of 50
+
+You have an Azure SQL Database named db1 and a Microsoft Entra group named db_readers.
+
+You need to ensure that the members of db_readers can read data from db1. The solution must follow the principle of least privilege.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Assign the db_accessadmin role to the user in the master database.
+This answer is incorrect.
+
+Assign the db_datareader role to the user in db1.
+This answer is correct.
+
+Assign the db_datareader role to the user in the master database.
+
+Assign the db_denydatawriter role to the user in db1.
+
+Create a user in the db1 database for db_readers.
+This answer is correct.
+
+Create a login and a user in the master database for db_readers.
+You need to create a contained database user in the db1 database. The user must be assigned the db_datareader role for db1 to be able to read the data.
+
+You should not create a user in the master database.
+
+You should not assign the db_accessadmin role to the user because this role allows you to manage security assignments for other roles.
+
+You should not assign the db_datareader role to the user for the master database because the user must read data from db1.
+
+You should not assign the db_denydatawriter role to the user for db1 because this role prevents data changes in the database but is unrelated to data selection.
+
+Database-Level Roles - SQL Server | Microsoft Learn
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 3 of 50
+
+You have an Azure SQL Database named db1 that includes two custom roles named db1_readers and db2_writers. You have a Microsoft Entra group named dbadmin.
+
+You need to ensure that the members of the dbadmin group can manage the membership of db1_readers and db1_writers. The solution must follow the principle of least privilege.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Assign the database user the db_accessadmin role for the db1 database.
+
+Assign the database user the db_securityadmin role for the db1 database.
+This answer is correct.
+
+Assign the database user the loginmanager role for the master database.
+
+Assign the database user the sysadmin role for the master database.
+
+Create a login and a database user in db1 for the dbadmin group.
+This answer is correct.
+
+Create a login and a database user in the master database for the dbadmin group.
+This answer is incorrect.
+You should create a login and a database user in db1 for the dbadmin group, because members of the dbadmin group need a user in the db1 database. Members of the db_securityadmin role can modify role membership for custom roles.
+
+The remaining options are incorrect. Members of the dbadmin group do not need server level permissions. Members of the sysadmin role can perform any activity on the instance. Members of the db_accessadmin role can add and remove access to the database. Members of the loginmanager role can create and delete logins in the virtual master database.
+
+Database-Level Roles - SQL Server | Microsoft Learn
+
+Configure database authentication and authorization - Training | Microsoft Learn
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 4 of 50
+
+You have an Azure SQL Database named db1.
+
+You need to ensure that all the data in db1 is encrypted at rest.
+
+What should you use?
+
+Select only one answer.
+
+Always Encrypted
+
+SQL Server auditing
+
+Microsoft Defender for SQL
+
+Transparent Data Encryption (TDE)
+This answer is correct.
+TDE is the Azure SQL Database feature that encrypts data at rest. All the data saved to a disk is encrypted.
+
+Auditing is not used for performing data encryption at rest, it is used for gathering diagnostic information.
+
+Defender for SQL is used to mitigate potential database vulnerabilities and detect anomalous activities.
+
+Always Encrypted protects data that is in use or in transit.
+
+Explore Transparent Data Encryption - Training | Microsoft Learn
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 5 of 50
+
+You have three Azure SQL Databases named db1,db2 and db3.
+
+You need to configure network access to meet the following requirements:
+
+Allow db1 users to connect from the 10.0.1.0/24 network.
+
+Allow db2 users to connect from the 10.0.2.0/24 network.
+
+Prevent db1 and db2 users from accessing other databases.
+
+Which two actions can you perform? Each correct answer presents a complete solution.
+
+Select all answers that apply.
+
+Connect to db1 and run EXECUTE sp_set_database_firewall_rule Allow db1 users, '10.0.1.0', '10.0.1.255';.
+This answer is correct.
+
+Connect to db2 and run EXECUTE sp_set_database_firewall_rule Allow db2 users, '10.0.2.0', '10.0.2.255';.
+This answer is correct.
+
+Connect to the master database and run EXECUTE sp_set_database_firewall_rule Allow db1 users, '10.0.1.0', '10.0.1.255';.
+
+Connect to the master database and run EXECUTE sp_set_database_firewall_rule Allow db2 users, '10.0.2.0', '10.0.2.255';.
+
+Connect to the master database and run EXECUTE sp_set_firewall_rule Allow db1 and db2 users, '10.0.1.0', '10.0.2.255';.
+This answer is incorrect.
+Connecting to db1 and running EXECUTE sp_set_database_firewall_rule Allow db1 users, '10.0.1.0', '10.0.1.255'; will set the database firewall on db1 to allow the correct IP addresses.
+
+Connecting to db2 and running EXECUTE sp_set_database_firewall_rule Allow db2 users, '10.0.2.0', '10.0.2.255'; will set the database firewall on db2 to allow the correct IP addresses.
+
+The remaining options are incorrect. Connecting to the master database and running EXECUTE sp_set_firewall_rule Allow db1 and db2 users, '10.0.1.0', '10.0.2.255'; will set the server firewall to allow the IP addresses for both sets of users to access all databases.
+
+Connecting to the master database and running EXECUTE sp_set_database_firewall_rule Allow db2 users, '10.0.2.0', '10.0.2.255'; will set the database firewall on the master database to allow the IP addresses for db2 users.
+
+Connecting to the master database and running EXECUTE sp_set_database_firewall_rule Allow db1 users, '10.0.1.0', '10.0.1.255'; will set the database firewall on the master database to allow the IP addresses for db1 users.
+
+sp_set_database_firewall_rule - Azure SQL Database | Microsoft Learn
+
+Protect data in-transit and at rest - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 6 of 50
+
+You have an Azure SQL Database named db1.
+
+You have an app named App1 that supports the latest TLS version.
+
+You need to ensure that App1 can access db1 in the most secure manner.
+
+What should you do?
+
+Select only one answer.
+
+Accept the default TLS version settings.
+
+Set the minimum TLS version setting to 1.0.
+
+Set the minimum TLS version setting to 1.2.
+This answer is correct.
+Setting the minimum required TLS version for the application to connect to 1.2 will allow App1 to access db1 in the most secure manner.
+
+Leaving the default settings and setting the minimum required TLS version for the application to connect to 1.0 are not the most secure methods.
+
+Enable encrypted connections - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 7 of 50
+
+You have an Azure SQL Database that contains a table named Employee. The table has columns that are masked by using dynamic data masking.
+
+When a user copies the Employee table by using the SELECT INTO command, the data is masked in a new table. The user must see the unmasked data in the new table.
+
+You need to grant the appropriate permissions to the user. The solution must follow the principle of least privilege.
+
+What should you grant to the user?
+
+Select only one answer.
+
+the ALTER ANY MASK permission
+
+the SELECT permission for the new table
+
+the UNMASK permission for the Employee table
+This answer is correct.
+
+the UNMASK permission for the new table
+This answer is incorrect.
+You should grant the UNMASK permission to the user for the Employee table because data must be unmasked before copying it to the new table.
+
+Granting the UNMASK permission to the user for the new table does not allow the user to see the unmasked data in the new table, as the data cannot be unmasked after it is copied to the new table.
+
+The ALTER ANY MASK permission is dedicated to the security officer as it allows that management of dynamic data masking, and the SELECT permission does not make masked data readable.
+
+Dynamic Data Masking - SQL Server | Microsoft Learn
+
+Implement compliance controls for sensitive data - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 8 of 50
+
+You have an Azure SQL Managed Instance that hosts a database. The database contains a column named Column1 that stores confidential information.
+
+You need to audit access to Column1. The solution must meet the following requirements:
+
+Retain audit data for at least eight years.
+
+Minimize administrative effort.
+
+Which three actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Apply a sensitivity classification to the column.
+This answer is correct.
+
+Configure a Log Analytics audit log destination.
+
+Configure a Storage audit log destination.
+This answer is correct.
+
+Enable Always Encrypted for the column.
+
+Enable Azure SQL Auditing.
+This answer is correct.
+
+Enable Transparent Data Encryption (TDE).
+This answer is incorrect.
+Azure SQL Auditing needs to be enabled to monitor access. A storage account allows unlimited retention. The column needs a classification label so that access is audited.
+
+Log Analytics has a maximum retention limit of seven years, Always Encrypted is used to protect data in use or in transit, and TDE encrypts data files.
+
+Explore server and database audit - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 9 of 50
+
+You have an Azure SQL Database named db1 that contains a table. The table contains a column that stores email addresses.
+
+You need to ensure that reporting users can only view email addresses in a format of aXXX@XXX.com. The solution must minimize the impact on other users.
+
+What should you configure?
+
+Select only one answer.
+
+Always Encrypted
+
+column encryption
+
+dynamic data masking
+This answer is correct.
+
+row-level security (RLS)
+This answer is incorrect.
+Dynamic data masking will enable users to only see masked values instead of email addresses.
+
+Always Encrypted protects data in use or in transit. RLS controls access to rows in a table, and column encryption will encrypt the data in the column, which can hinder users’ ability to view the data.
+
+Dynamic Data Masking - SQL Server | Microsoft Learn
+
+Implement compliance controls for sensitive data - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 10 of 50
+
+You have a data estate that includes multiple Azure SQL Databases.
+
+You need to audit the lifecycle of data across the estate. The solution must minimize administrative effort.
+
+What should you use?
+
+Select only one answer.
+
+Auditing for Azure SQL Database
+
+Azure Data Factory
+
+Microsoft Defender for SQL
+
+Microsoft Purview
+This answer is correct.
+Microsoft Purview will provide data lineage.
+
+Auditing for Azure SQL Database tracks database events, Azure SQL Defender surfaces database vulnerabilities, and Azure Data Factory is a data integration service. These options do not provide a full view of the lifecycle of the data while minimizing the administrative effort required to perform the audit.
+
+Implement Azure Purview - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 11 of 50
+
+You need to recommend a high-availability and disaster recovery (HA/DR) strategy for a SQL Server on Azure Virtual Machines instance. The solution must meet the following requirements:
+
+All databases, including system databases, must be protected.
+SQL Server Agent jobs must be protected.
+Downtime must be minimized.
+The failover process must be done automatically.
+What should you include in the recommendation?
+
+Select only one answer.
+
+an Always On availability group
+
+an Always On failover cluster instance
+This answer is correct.
+
+log shipping
+
+transactional replication
+This answer is incorrect.
+You should recommend an Always On failover cluster instance because this feature protects the entire instance. A SQL Server on Azure Virtual Machines instance is the entire installation of Microsoft SQL Server, such as binaries and all the objects inside the instance, including logins, SQL Server Agent jobs, and databases. Instance-level protection means that the entire instance is accounted for in the availability feature.
+
+An Always On availability group works at the database level rather than the instance level. Transactional replication cannot replicate system databases, and neither transactional replication nor log shipping allow you to perform automatic failover.
+
+Always On failover cluster instances - SQL Server Always On | Microsoft Learn
+
+Describe high availability and disaster recovery strategies - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 12 of 50
+
+You have 100 on-premises Microsoft SQL servers.
+
+You plan to migrate the servers to SQL Server on Azure Virtual Machines.
+
+You need to recommend a high-availability solution that will maintain availability if a datacenter fails.
+
+What should you include in the recommendation?
+
+Select only one answer.
+
+availability sets
+
+availability zones
+This answer is correct.
+
+Azure Backup
+
+Azure Site Recovery
+This answer is incorrect.
+You should recommend availability zones, as they account for datacenter-level failure in Azure.
+
+Availability sets provide uptime against Azure-related maintenance and single points of failure in a single datacenter, Azure Site Recovery replicates workloads running on physical and virtual machines from a primary site to a secondary location, and Azure Backup is used to provide independent and isolated backups to guard against the unintended destruction of the data on your virtual machines.
+
+Describe Azure high availability and disaster recovery features for Azure Virtual Machines - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 13 of 50
+
+You have an Azure SQL Managed Instance that contains a database named db1. You have a backup of db1.
+
+You need to restore db1 to the point in time of the backup.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Drop db1.
+This answer is correct.
+
+Restore db1 from a file.
+
+Restore db1 from a URL.
+This answer is correct.
+
+Set db1 to single-user mode.
+This answer is incorrect.
+You should drop the existing database first because the existing database cannot be overwritten on the SQL managed instance. You should also restore the database db1 from a URL.
+
+Setting db1 to single-user mode is not allowed on the SQL managed instance, and while the SQL managed instance allows you to perform a manual database restore from a URL, it does not allow you to restore the database from a tape or disk.
+
+Restore a database from a backup - Azure SQL Managed Instance | Microsoft Learn
+
+Back up and restore databases - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 14 of 50
+
+You have a SQL Server on Azure Virtual Machines instance.
+
+During a weekly maintenance task, you discover that a database named db1 has consistency errors.
+
+You plan to restore the database from backups.
+
+Which command should you run before you run the RESTORE command?
+
+Select only one answer.
+
+ALTER DATABASE db1 SET EMERGENCY
+
+ALTER DATABASE db1 SET OFFLINE
+
+ALTER DATABASE db1 SET RESTRICTED_USER
+
+ALTER DATABASE db1 SET SINGLE_USER
+This answer is correct.
+You should run the ALTER DATABASE db1 SET SINGLE_USER command, as only one user at a time can access the database. If you specify SINGLE_USER, and another user connects to the database, the ALTER DATABASE command is blocked until all users disconnect from the specified database. This is the command that should be run before the RESTORE command is run.
+
+Running the ALTER DATABASE db1 SET EMERGENCY command would not work because the database is marked as READ_ONLY, logging is disabled, and access is limited to members of the sysadmin fixed server role.
+
+By running ALTER DATABASE db1 SET OFFLINE, the database will shut down, and you cannot perform the restore operation. You cannot modify a database while it is offline.
+
+Running the ALTER DATABASE db1 SET RESTRICTED_USER command allows for only members of the db_owner fixed database role dbcreator, and fixed server roles to connect to the database.
+
+ALTER DATABASE SET Options (Transact-SQL) - SQL Server | Microsoft Learn
+
+Back up and restore databases - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 15 of 50
+
+You have an Azure SQL Database named db1.
+
+You need to configure a backup strategy to ensure that the db1 has backups retained for six years.
+
+What should you configure?
+
+Select only one answer.
+
+differential backup frequency
+
+long-term retention
+This answer is correct.
+
+point-in-time-restore
+This answer is incorrect.
+A long-term retention policy allows you to specify how many weeks, months, and years a backup should be kept. The maximum time is 10 years.
+
+A point-in-time-restore policy only allow you to keep backups for 35 days, and a differential backup frequency policy specifies how often you want differential backup to be taken.
+
+Azure SQL Database: Manage long-term backup retention - Azure SQL Database | Microsoft Learn
+
+Back up and restore databases - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 16 of 50
+
+You have a Microsoft SQL Server 2019 instance.
+
+You are configuring a backup maintenance solution.
+
+You need to ensure that the databases can be restored to any point in time.
+
+Which two types of backups should you include? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+backup copy-only
+
+file
+
+filegroup
+
+full database
+This answer is correct.
+
+transaction log
+This answer is correct.
+To configure a backup maintenance solution and ensure that the databases can be restored to any point in time, a full database backup and a transaction log backup are required.
+
+A copy-only backup is a SQL Server backup that is independent of the sequence of conventional SQL Server backups. A file backup contains all the data in one or more files, and a filegroup backup contains all the data in one or more filegroups.
+
+Back up and restore SQL Server running on Azure virtual machines - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 17 of 50
+
+You have a Microsoft SQL Server 2022 instance that contains several databases.
+
+You are planning a disaster recovery solution for the instance.
+
+You need to ensure that all databases can be restored to any point-in-time.
+
+Which three actions should you include in the solution? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Include a full database backup
+This answer is correct.
+
+Include a log backup
+This answer is correct.
+
+Set the bulk logged recovery model
+
+Set the Continue on error option
+
+Set the Copy-only backup option
+
+Set the full recovery model
+This answer is correct.
+Both full and transaction log database backups are required. The database must be set to the full recovery model.
+
+You should not set the database to the bulk recovery model, as there are situations where the bulk recovery model does not allow you to set the point-in-time recovery.
+
+The Copy-only option is used to perform a backup that is used independently of conventional backups. This is not useful when building the disaster recovery strategy.
+
+The Continue on error option is used when you must perform a backup during the disaster.
+
+Back up and restore databases - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 18 of 50
+
+You have an Azure SQL logical server named SQL1 that hosts five databases.
+
+You need to ensure that you can restore the databases if SQL1 is deleted.
+
+What should you include in the solution?
+
+Select only one answer.
+
+accelerated database recovery
+
+Azure Backup
+
+elastic pools
+
+long-term backup retention
+This answer is correct.
+Using long-term retention will allow you to restore the databases if the server is deleted.
+
+The remaining options do not allow for a restore of the databases if a server is deleted. Accelerated database recovery is a redesigning of the Microsoft SQL Server database engine recovery process, enabling fast and consistent database recovery. Azure SQL Database elastic pools are a solution for managing and scaling multiple databases. The Azure Backup service provides simple, secure, and cost-effective solutions to back up your data and recover it from the Microsoft Azure cloud.
+
+Long-term backup retention - Azure SQL Database & Azure SQL Managed Instance | Microsoft Learn
+
+Back up and restore databases - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 19 of 50
+
+You have an Azure SQL Database.
+
+You need to configure high availability for the database in the event of a regional outage.
+
+Which two features can you use? Each correct answer presents a complete solution.
+
+Select all answers that apply.
+
+active geo-replication
+This answer is correct.
+
+Always On availability groups
+
+auto-failover groups
+This answer is correct.
+
+long-term backup retention
+This answer is incorrect.
+Active geo-replication creates a secondary database replica in another region that is asynchronously kept up-to-date, and the auto-failover groups feature allows you to manage the replication and failover of some or all databases on a logical server to another region.
+
+The Always On availability groups feature is a high-availability and disaster recovery (HA/DR) solution, but it is not used for Azure SQL Database. Long-term backup retention stores database backups in Azure Blob storage.
+
+Describe active geo-replication for Azure SQL Database - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 20 of 50
+
+You have an Azure SQL Managed Instance that hosts five databases.
+
+You need to configure disaster recovery for the databases in the event of a regional outage.
+
+What can you use?
+
+Select only one answer.
+
+active geo-replication
+
+Always On availability groups
+
+auto-failover groups
+This answer is correct.
+
+long-term backup retention
+This answer is incorrect.
+The auto-failover groups feature allows you to manage the replication and failover of some or all databases on a logical server to another region, which allows you to configure high availability in the event of a regional outage.
+
+Active geo-replication creates a secondary database replica in another region, but it is asynchronously kept up-to-date for Azure SQL Database. The Always On availability groups feature is a high-availability and disaster recovery (HA/DR) solution, but it is not for Azure SQL Database. Long-term backup retention stores database backups in Azure Blob storage.
+
+Explore auto-failover groups for Azure SQL Database and Azure SQL Managed Instance - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 21 of 50
+
+You have an Azure subscription that contains five virtual machines. The virtual machines host a Microsoft SQL Server 2019 Always On availability group named AG1.
+
+You need to enable monitoring for AG1. The solution must ensure that you can monitor the health of AG1 and diagnose performance issues.
+
+What should you use?
+
+Select only one answer.
+
+Intelligent Insights
+
+Query Performance Insight
+
+SQL Database Advisor
+
+SQL Insights
+This answer is correct.
+SQL Insights is a comprehensive solution for monitoring any product in the Azure SQL family. As such, it allows you to monitor the health of AG1 and diagnose any performance issues.
+
+Query Performance Insight provides intelligent query analysis for single and pooled databases, SQL Database Advisor provides performance recommendations, and Intelligent Insights uses built-in intelligence to continuously monitor database usage through artificial intelligence (AI) and detect disruptive events that cause poor performance.
+
+Azure SQL Database and Azure SQL Managed Instance monitoring and tuning documentation - Azure SQL | Microsoft Learn
+
+Explore IaaS and PaaS solutions for high availability and disaster recovery - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 22 of 50
+
+You have a SQL Server on an Azure Virtual Machines instance.
+
+You need to configure an alert when a log truncation occurs in a database.
+
+Which type of alert should you configure?
+
+Select only one answer.
+
+SQL Server event alert
+
+SQL Server performance condition alert
+This answer is correct.
+
+WMI event alert
+This answer is incorrect.
+Configuring a SQL Server performance condition alert allows you to use performance metrics that are generated by Microsoft SQL Server. You can specify an alert to occur in response to a particular performance condition. In this case, you specify the performance counter to monitor, a threshold for the alert, and the behavior that the counter must show if the alert is to occur.
+
+A SQL Server event alert should be used when a specific error occurs and the WMI event alert occurs in response to a specific WMI event.
+
+Alerts - SQL Server Agent | Microsoft Learn
+
+Create and manage SQL Agent jobs - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 23 of 50
+
+You have a SQL Server on Azure Virtual Machines instance.
+
+You need to ensure that an automated email is sent if a job fails. The solution must minimize administrative effort.
+
+Which three actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Create a Database Mail profile.
+This answer is correct.
+
+Create an alert.
+
+Enable the mail profile on SQL Server Agent.
+This answer is correct.
+
+Restart the SQL Server Agent service
+This answer is correct.
+
+Restart the SQL Server service.
+This answer is incorrect.
+To ensure that an automated email is sent if a job fails, you need to create and configure a Database Mail profile, then configure the SQL Server Agent properties. You also need to enable the mail profile because it is disabled by default for security reasons, and a restart of the SQL Server Agent service is required.
+
+Restarting the SQL Server service is unnecessary, because email notifications are configured on the SQL Server Agent level. You need to restart the SQL Server Agent service instead. You should not create an alert, as notifications about the job failure can be achieved directly on each job step.
+
+SQL Server Agent Properties (Alert System Page) - SQL Server Agent | Microsoft Learn
+
+Create and manage SQL Agent jobs - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 24 of 50
+
+You have an Azure SQL Managed Instance.
+
+You need to ensure that you receive a notification when a SQL Server Agent job fails.
+
+Which three actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Create a Database Mail account.
+This answer is correct.
+
+Create a Database Mail profile.
+This answer is correct.
+
+Create a SQL Server Agent proxy.
+
+Create a SQL Server credential.
+
+Enable Database Mail.
+This answer is correct.
+To ensure that you receive a notification when a SQL Server Agent job fails, Database Mail needs to be enabled, a Database Mail account needs to be created, and a Database Mail profile needs to be created.
+
+A SQL Server credential and a SQL Server Agent proxy are not required.
+
+Describe task status notifications - Training | Microsoft Learn
+
+Configure SQL Server Agent mail to use Database Mail - SQL Server | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 25 of 50
+
+You have a Microsoft SQL Server 2019 instance.
+
+You need to ensure that an alert is generated when a SQL error of severity 15 occurs.
+
+What should you use?
+
+Select only one answer.
+
+a SQL Server event alert
+This answer is correct.
+
+a SQL Server performance alert
+
+an Extended Events session
+
+SQL Server Auditing
+This answer is incorrect.
+A SQL Server event alert will fire on errors of severity 15.
+
+A SQL Server performance alert will fire for a performance condition, Azure SQL Auditing tracks database events and records them, and Extended Events is a lightweight performance monitoring system that does not fire on an error of severity 15.
+
+Alerts - SQL Server Agent | Microsoft Learn
+
+Create and manage SQL Agent jobs - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 26 of 50
+
+You deploy a SQL Server on Azure Virtual Machines instance.
+
+You need to ensure that automated patching is enabled.
+
+Which two cmdlets should you run? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+New-AzVMConfig
+
+New-AzVMSqlServerAutoPatchingConfig
+This answer is correct.
+
+Set-AzVMSqlServerExtension
+This answer is correct.
+
+Set-AzVMCustomScriptExtension
+This answer is incorrect.
+The New-AzVMSqlServerAutoPatchingConfig cmdlet allows you to create a configuration object for automatic patching on a virtual machine, and the Set-AzVMSqlServerExtension cmdlet establishes a maintenance window for a SQL Server on Azure Virtual Machines instance. Automated updates can only be installed during this maintenance window.
+
+Set-AzVMCustomScriptExtensionUpdate Adds a custom script extension to a virtual machine, and the New-AzVMConfig cmdlet creates a configurable local virtual machine object for Azure.
+
+Set-AzVMSqlServerExtension (Az.Compute) | Microsoft Learn
+
+Automate deployment of database resources - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 27 of 50
+
+You have a bacpac file from an existing Microsoft SQL Server database. You copy the file to an Azure Storage account.
+
+You need to apply the bacpac file to an existing Azure SQL Database.
+
+Which command should you run?
+
+Select only one answer.
+
+az sql db create
+
+az sql db import
+This answer is correct.
+
+az sql db restore
+
+az sql db update
+This answer is incorrect.
+You can use the az sql db import command to import the database from the bacpac file. The database must be created before the bacpac file is imported.
+
+The az sql db restore command creates a new database from backup, and the az sql db update command updates the existing database.
+
+az sql db | Microsoft Learn
+
+Automate deployment of database resources - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 28 of 50
+
+You have an Azure subscription that contains a resource group named RG1.
+
+You need to create an Azure SQL Managed Instance in RG1 by using PowerShell.
+
+Which cmdlet should you run?
+
+Select only one answer.
+
+New-AzSqlDatabase
+
+New-AzSqlInstance
+This answer is correct.
+
+New-AzSqlServer
+
+Set-AzSqlInstance
+
+Set-AzSqlServer
+This answer is incorrect.
+By using the New-AzSqlInstance cmdlet, you can create a new SQL managed instance.
+
+New-AzSQLServer creates a new Microsoft SQL server, New-AzSqlDatabase creates a new Azure SQL Database, Set-AzSqlInstance sets the properties for a SQL managed instance, and Set-AzSqlServer sets the properties for a Microsoft SQL server.
+
+New-AzSqlInstance (Az.Sql) | Microsoft Learn
+
+Automate deployment of database resources - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 29 of 50
+
+You have an Azure SQL Database named db1 that contains a table named Sales.
+
+You create an Azure Logic App.
+
+You need to configure the logic app to capture information when a new row is added to Sales.
+
+What should you configure in the logic app?
+
+Select only one answer.
+
+a Get rows action
+
+a When item is created trigger
+This answer is correct.
+
+an Execute SQL statement action
+
+an Insert row action
+This answer is incorrect.
+By configuring a When item is created trigger, the trigger will be executed when a new row is inserted into the table.
+
+The Execute SQL query action is used when you provide a query that will be executed by the logic app on the target database, the Get rows action selects data from a table, and the Insert row action inserts a new row into the table.
+
+SQL Server - Connectors | Microsoft Learn
+
+Manage Azure PaaS tasks using automation - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 30 of 50
+
+You have 20 on-premises Microsoft SQL Server instances.
+
+You need to migrate the instances to Azure. The solution must support auditing at the server level.
+
+Which two services can you use? Each correct answer presents a complete solution.
+
+Select all answers that apply.
+
+Azure SQL Database elastic pool
+
+Azure SQL Database Hyperscale
+
+Azure SQL Database serverless
+
+Azure SQL Managed Instance
+This answer is correct.
+
+SQL Server on Azure Virtual Machines
+This answer is correct.
+SQL Server on Azure Virtual Machines and Azure SQL Managed Instance support SQL Server Audit and can be used.
+
+Azure SQL Database serverless is a compute tier of Azure SQL Database that does not support SQL Server Audit. Azure SQL Database Elastic pool is a shared database offering of Azure SQL Database that doesn’t support SQL Server Audit. Azure SQL Database Hyperscale is a service tier of Azure SQL Database that does not support SQL Server Audit.
+
+Explore Azure SQL Database Managed Instance - Training | Microsoft Learn
+
+T-SQL differences between SQL Server & Azure SQL Managed Instance - Azure SQL Managed Instance | Microsoft Learn
+
+SQL Server Audit (Database Engine) - SQL Server | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 31 of 50
+
+You plan to deploy an Azure SQL Database that will include a table named Table1. Table1 will include the following fields:
+
+StockItemTransactionID (Int)
+
+StockItemID (Int)
+
+TransactionTypeID (Int)
+
+CustomerID (Int)
+
+InvoiceID (Int)
+
+SupplierID (Int)
+
+PurchaseOrderID (Int)
+
+TransactionOccurredWhen (Datetime)
+
+Quantity (Int)
+
+LastEditedBy (Int)
+
+LastEditedWhen (Datetime)
+
+You need to recommend a partitioning method for the table. The solution must meet the following requirements:
+
+The data must be kept for 2 years.
+All data older than two years must be removed once a month.
+Performance of data removal operations must be maximized.
+Which three actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Create a partition function for each month.
+This answer is correct.
+
+Create a partition function for each year.
+
+Create a partition schema for filegroups for each year.
+
+Create a partition schema for the PRIMARY filegroup.
+This answer is correct.
+
+Create the table by using the partition schema on the StockItemTransactionID column.
+
+Create the table by using the partition schema on the TransactionOccurredWhen column.
+This answer is correct.
+The data must be removed each month so it will be more efficient to create a partition function for each month. You can only use the PRIMARY filegroup in Azure SQL Database, and the data should be partitioned on datetime.
+
+Also, because the data must be removed each month, it will be less efficient to create a partition for each year. You cannot create filegroups in Azure SQL Database.
+
+Create partitioned tables and indexes - SQL Server, Azure SQL Database, Azure SQL Managed Instance | Microsoft Learn
+
+Explore performance and security - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 32 of 50
+
+You are deploying a SQL Server on Azure Virtual Machines instance for a production environment. One of the databases in this instance has in-memory tables.
+
+You need to choose the most suitable virtual machine type for the deployment.
+
+What should you choose?
+
+Select only one answer.
+
+compute optimized
+
+general purpose
+
+GPU
+
+memory optimized
+This answer is correct.
+Memory optimized virtual machine sizes offer a high memory-to-CPU ratio that is good for relational database servers, medium to large caches, and in-memory analytics.
+
+General purpose virtual machines provide a balanced CPU-to-memory ratio. These are best for testing and development, small to medium databases, and low to medium traffic web servers.
+
+Compute optimized virtual machines have a high CPU-to-memory ratio. These are used for medium traffic web servers, network appliances, batch processes, and application servers.
+
+GPU optimized virtual machine sizes are specialized virtual machines available with single, multiple, or fractional GPUs. These sizes are designed for compute-intensive, graphics-intensive, and visualization workloads.
+
+Azure VM sizes - Memory - Azure Virtual Machines | Microsoft Learn
+
+Prepare to maintain SQL databases on Azure - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 33 of 50
+
+You have an on-premises instance of Microsoft SQL Server 2019 that uses a SQL common language runtime (CLR) stored procedure to access a file share.
+
+You need to migrate the instance to Azure.
+
+To which Azure service should you migrate the instance?
+
+Select only one answer.
+
+Azure SQL Database Hyperscale
+
+Azure SQL Database serverless
+
+Azure SQL Managed Instance
+
+SQL Server on Azure Virtual Machines
+This answer is correct.
+SQL Server on Azure Virtual Machine supports SQL CLR objects. The objects can access files shares, disks, and folders.
+
+Azure SQL Database serverless is a compute tier for Azure SQL Database that does not support SQL CLR objects.
+
+Azure SQL Database Hyperscale is a service tier of Azure SQL Database that does not support SQL CLR objects.
+
+Azure SQL Managed Instance does not support SQL CLR objects that access file shares or folders of the operating system.
+
+Compare the database engine features of SQL Database and SQL Managed Instance - Azure SQL Database & SQL Managed Instance | Microsoft Learn
+
+T-SQL differences between SQL Server & Azure SQL Managed Instance - Azure SQL Managed Instance | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 34 of 50
+
+You have an Azure SQL Managed Instance that contains a database named db1.
+
+You need to implement table partitioning for a table in db1.
+
+You create the filegroups.
+
+What should you do next?
+
+Select only one answer.
+
+Create a partition function, create a partition scheme, and then create a table on the partition function.
+
+Create a partition function, create a partition scheme, and then create a table on the partition scheme.
+This answer is correct.
+
+Create a partition function, create a table on the partition function, and then change the fill factor settings on indexes.
+
+Create a partition scheme, create a table on the partition scheme, and then change the fill factor settings on indexes.
+This answer is incorrect.
+You should first create a partition function to define how the rows in a table or index map to a set of partitions based on the values of a partitioning column. Then you should create a partition scheme, which is a database object that maps the partitions of a partition function to one filegroup or to multiple filegroups. Finally, you should create a table specifying the partition scheme.
+
+You should not create a table specifying the partition function, as a partition scheme is needed, nor should you change the fill factor settings for the indexes, as these settings relate to the free space at the index page level.
+
+Partitioned tables and indexes - SQL Server, Azure SQL Database, Azure SQL Managed Instance | Microsoft Learn
+
+Explore performance and security - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 35 of 50
+
+You have an Azure SQL Database that is only used to process data for three hours a day. Currently, the database has the Standard S3 (100 DTU) service tier configured.
+
+You need to recommend a solution that will increase the performance without increasing the cost.
+
+Which database service tier do you recommend?
+
+Select only one answer.
+
+Premium
+
+Business Critical vCore
+
+Hyperscale vCore
+
+vCore serverless
+This answer is correct.
+By choosing the vCore serverless service tier, the database will be active only during the daily schedule, and the amount of vCores can be configured dynamically to handle the workload.
+
+The Premium, Hyperscale, and Business Critical service tiers will be a more expensive solution.
+
+What is the Hyperscale service tier? - Azure SQL Database | Microsoft Learn
+
+Understand SQL database hyperscale - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 36 of 50
+
+You have an on-premises SQL Server database that is used as part of a mission critical app.
+
+You plan to migrate the database to SQL Server on Azure Virtual Machines.
+
+You need to configure the disks for the virtual machine. The solution must meet the following requirements:
+
+Maximize throughput.
+
+Minimize latency.
+
+Which type of disk should you use?
+
+Select only one answer.
+
+Premium SSD
+
+Standard HDD
+
+Standard SSD
+
+Ultra disk
+This answer is correct.
+Ultra SSD will provide the highest throughput. Standard HDD, Standard SSD, and Premium SSD will not provide the highest throughput.
+
+Explore performance and security - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 37 of 50
+
+You are planning a migration from on-premises Microsoft SQL Server to Azure using Azure Database Migration Service.
+
+You need to keep databases online during the migration.
+
+Which two services can you use? Each correct answer presents a complete solution.
+
+Select all answers that apply.
+
+Azure Cosmos DB
+
+Azure SQL Database
+
+Azure SQL Managed Instance
+This answer is correct.
+
+SQL Server on Azure Virtual Machines
+This answer is correct.
+SQL Server on Azure Virtual Machines and Azure SQL Managed Instance both support online migration.
+
+Azure SQL Database does not support online migration and Azure CosmosDB is not a relational database.
+
+Supported database migration scenarios - Azure Database Migration Service | Microsoft Learn
+
+Migrate SQL workloads to Azure SQL Databases - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 38 of 50
+
+You have a database in an Azure SQL Managed Instance.
+
+You need to synchronize data from five tables in the database to an Azure SQL Database. Any subsequent data changes must be visible in the Azure SQL Database as quickly as possible.
+
+Which migration method should you use?
+
+Select only one answer.
+
+Azure Data Factory
+
+BCP
+
+change data capture
+
+transactional replication
+This answer is correct.
+Transactional replication allows you to select tables and apply filters so only the required data will be sent to the target database. The replication process occurs nearly in real time, and it does not require any additional coding.
+
+Change data capture and BCP require an additional orchestration component, such as Data Factory, to send changes from the source server to the target server. If you use Data Factory, you will need to detect changes when the pipeline is running. This process takes more time.
+
+Transactional replication - Azure SQL Managed Instance | Microsoft Learn
+
+Evaluate strategies for migrating to Azure SQL - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 39 of 50
+
+You have an on-premises Microsoft SQL Server 2019 instance.
+
+You need to migrate the instance to an Azure SQL Managed Instance. The solution must minimize downtime.
+
+What should you do first?
+
+Select only one answer.
+
+Create an Azure SQL Managed Instance with premium series hardware. Create full and log backups with WITH CHECKSUM. Store the backups in an SMB network share.
+This answer is correct.
+
+Create an Azure SQL Managed Instance with premium series hardware. Create full and log backups WITH FILE_SNAPSHOT.. Store the backups in Azure Blob storage.
+
+Create an Azure SQL Managed Instance with standard series hardware. Create full and log backups WITH CHECKSUM. Store the backups in an SMB network share.
+
+Create an Azure SQL Managed Instance with standard series hardware. Create full and log backups WITH FILE_SNAPSHOT. Store the backups in Azure Blob storage.
+This answer is incorrect.
+Premium hardware must be used for an online migration. The backups must also be taken with CHECKSUM enabled.
+
+Standard hardware cannot be used for an online migration and storing the backups in Blob storage creates an Azure snapshot of the database files.
+
+Tutorial: Migrate SQL Server online to SQL Managed Instance - Azure Database Migration Service | Microsoft Learn
+
+Describe Azure database migration options - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 40 of 50
+
+You have an on-premises Microsoft SQL Server 2019 instance that hosts 10 databases.
+
+You plan to migrate the databases to Azure SQL Database.
+
+You need to validate the compatibility of the databases with Azure SQL Database.
+
+Which two tools can you use? Each correct answer presents a complete solution.
+
+Select all answers that apply.
+
+App and Data Modernization Readiness Tool
+
+Data Migration Assistant (DMA)
+This answer is correct.
+
+Microsoft Assessment and Planning (MAP) Toolkit for SQL Server
+
+the Azure Migrate Discovery and assessment tool
+This answer is correct.
+
+the SQL Server Management Studio (SSMS) Copy Database Wizard
+This answer is incorrect.
+DMA will assess the database for compatibility. The Azure Migrate Discovery and assessment tool discovers and assesses on-premises VMware virtual machines, Hyper-V virtual machines, and physical servers for migration to Azure.
+
+The MAP toolkit provides an inventory of the Microsoft Platform. The Copy Database Wizard is used for copying databases. The App and Data Modernization Readiness Tool is used to help customers evaluate their business strategies.
+
+Overview of Data Migration Assistant (SQL Server) - SQL Server | Microsoft Learn
+
+Evaluate strategies for migrating to Azure SQL - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 41 of 50
+
+You have an Azure SQL Server 2019 instance.
+
+You need to enable Extended Events to monitor deadlocks.
+
+Which T-SQL Statement should you run?
+
+Select only one answer.
+
+CREATE EVENT SESSION deadlocks ON SERVER ADD EVENT sqlserver.lock_deadlock(ACTION(sqlserver.sql_text)), ADD EVENT sqlserver.lock_deadlock_chain(ACTION(sqlserver.sql_text)) ADD TARGET package0.event_counter WITH (MAX_MEMORY=4MB, MAX_DISPATCH_LATENCY = 3 SECONDS); GO
+
+CREATE EVENT SESSION deadlocks ON SERVER ADD EVENT sqlserver.lock_deadlock(ACTION(sqlserver.sql_text)), ADD EVENT sqlserver.lock_deadlock_chain(ACTION(sqlserver.sql_text)) ADD TARGET package0.event_file ( SET filename=C:\traces\deadlocks.xel' ) WITH (MAX_MEMORY=4MB, MAX_DISPATCH_LATENCY = 3 SECONDS); GO
+This answer is correct.
+
+CREATE EVENT SESSION deadlocks ON SERVER ADD EVENT sqlserver.lock_deadlock(ACTION(sqlserver.sql_text)), ADD EVENT sqlserver.lock_deadlock_chain(ACTION(sqlserver.sql_text)) ADD TARGET package0.histogram ( SET filtering_event_name=N'sqlserver.lock_deadlock’, source=N'sqlserver.sql_text’ ) WITH (MAX_MEMORY=4MB, MAX_DISPATCH_LATENCY = 3 SECONDS); GO
+This answer is incorrect.
+The event_file target will enable historical troubleshooting.
+
+The event counter target merely counts how many times each specified event occurs and the histogram target counts occurrences of different types of items.
+
+Targets for Extended Events in SQL Server - SQL Server | Microsoft Learn
+
+Explore extended events - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 42 of 50
+
+You have an Azure subscription that contains five Azure SQL Databases.
+
+You need to configure SQL Insights.
+
+What should you do first?
+
+Select only one answer.
+
+Configure automatic tuning.
+
+Configure Extended Events.
+
+Create a monitoring profile.
+This answer is correct.
+
+Enable Azure SQL Auditing.
+This answer is incorrect.
+Creating a monitoring profile is the first requirement to configuring SQL Insights.
+
+Automatic tuning uses AI to provide peak performance. Azure SQL Auditing tracks database events and records them. Extended Events is a lightweight performance monitoring system.
+
+Describe Azure SQL Insights - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 43 of 50
+
+You plan to use Query Store in an Azure SQL Managed Instance.
+
+You need to ensure that you can manually force execution plans for regressed queries. The solution must follow the principle of least privilege.
+
+To which database role should you be assigned?
+
+Select only one answer.
+
+db_accessadmin
+
+db_ddladmin
+
+db_owner
+This answer is correct.
+
+db_securityadmin
+This answer is incorrect.
+As a member of the db_owner fixed database role, you can perform all configuration and maintenance activities on the database, while following the principle of least privilege.
+
+Members of the db_ddladmin role can run any DDL commands for a database. Members of this role can potentially elevate their privileges by manipulating code that may be executed under high privileges, and their actions should be monitored. A member of the db_accessadmin fixed database role can add or remove access to the database for Windows logins, Windows groups, and Microsoft SQL Server logins. Members of the db_securityadmin role can modify role membership for custom roles only and manage permissions.
+
+Database-Level Roles - SQL Server | Microsoft Learn
+
+Configure database authentication and authorization - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 44 of 50
+
+You have a database in an Azure SQL Managed Instance.
+
+You need analyze the wait information for all the sessions currently running on the instance and select the query that has the highest number of waits.
+
+Which dynamic management view should you query?
+
+Select only one answer.
+
+sys.dm_db_wait_stats
+
+sys.dm_exec_query_profiles
+
+sys.dm_exec_query_statistics_xml
+
+sys.dm_exec_sessions_wait_stats
+This answer is correct.
+The sys.dm_exec_sessions_wait_stats view returns information about all the waits encountered by threads that executed for each session. You can use this view to diagnose performance issues with Microsoft SQL Server sessions and also with specific queries and batches.
+
+The sys.dm_exec_query_profiles view monitors real-time query progress while the query is in execution, the sys.dm_exec_query_statistics_xml view returns query execution plans for in-flight requests, and the sys.dm_db_wait_stats view returns information about all the waits encountered by threads that executed during an operation.
+
+sys.dm_exec_session_wait_stats (Transact-SQL) - SQL Server | Microsoft Learn
+
+Evaluate performance improvements - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 45 of 50
+
+You have an Azure SQL Managed Instance that contains databases.
+
+One of the databases experiences excessive blocking.
+
+You need to identify which session is causing the blocking.
+
+Which dynamic management view should you query?
+
+Select only one answer.
+
+sys.dm_exec_query_stats
+
+sys.dm_exec_requests
+This answer is correct.
+
+sys.dm_exec_session_wait_stats
+
+sys.dm_exec_sessions
+This answer is incorrect.
+sys.dm_exec_requests returns information about each request that is executing in Microsoft SQL Server. One of the columns exposed by this view is blocking_session_id.
+
+sys.dm_exec_sessions returns one row per authenticated session in SQL Server. This view does not return information about blocking issues.
+
+sys.dm_exec_query_stats returns aggregate performance statistics for cached plans in SQL Server.
+
+sys.dm_exec_session_waits returns information about all the waits encountered by threads that are executed for each session.
+
+sys.dm_exec_requests (Transact-SQL) - SQL Server | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 46 of 50
+
+You have a database in an Azure SQL Managed Instance.
+
+You need to control the MAXDOP configuration at the workload level. The solution must minimize administrative and development effort.
+
+What should you do?
+
+Select only one answer.
+
+At the database query level, set the MAXDOP hint.
+
+Configure the MAXDOP option in the database by using ALTER DATABASE SCOPED CONFIGURATION.
+
+Execute the sp_configure stored procedure with the max degree of parallelism parameter.
+
+In Resource Governor, set the MAX_DOP workload group configuration.
+This answer is correct.
+Configure the MAX_DOP workload group configuration in Resource Governor to be able to control the degree of parallelism per defined workload. This option can be set in the CREATE WORKLOAD GROUP statement.
+
+The ALTER DATABASE SCOPED CONFIGURATION statement manages the settings per database and not per workload. Using the MAXDOP hint on the query level requires code changes, and you cannot control the workload. Using the sp_configure stored procedure changes the settings at the server level, and you cannot control the workload.
+
+ALTER DATABASE SCOPED CONFIGURATION - SQL Server (Transact-SQL) | Microsoft Learn
+
+CREATE WORKLOAD GROUP (Transact-SQL) - SQL Server | Microsoft Learn
+
+Configure databases for optimal performance - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 47 of 50
+
+You need to find all indexes that have high fragmentation.
+
+Which two dynamic management views should you query? Each answer presents a part of the solution.
+
+Select all answers that apply.
+
+sys.dm_db_column_store_row_group_physical_stats
+This answer is correct.
+
+sys.dm_db_index_operational_stats
+
+sys.dm_db_index_physical_stats
+This answer is correct.
+
+sys.dm_db_index_usage_stats
+This answer is incorrect.
+You should query the sys.dm_db_index_physical_stats view, as it returns size and fragmentation information for the data and indexes of the specified table or view in Microsoft SQL Server. For an index, one row is returned for each level of the B-tree in each partition. For a heap, one row is returned for the IN_ROW_DATA allocation unit of each partition. You should also query the sys.dm_db_column_store_row_group_physical_stats view because it provides current rowgroup-level information about all the columnstore indexes in the current database. Based on the information, you can calculate the index fragmentation.
+
+The sys.dm_db_index_usage_stats view returns counts of different types of index operations and the time each type of operation was last performed, and the sys.dm_db_index_operational_stats view returns current lower-level I/O, locking, latching, and access method activity for each partition of a table or index in the database.
+
+sys.dm_db_index_physical_stats (Transact-SQL) - SQL Server | Microsoft Learn
+
+Configure databases for optimal performance - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 48 of 50
+
+You run the DBCC CHECKDB command for a production database. The command shows errors in several nonclustered indexes.
+
+You need to repair the indexes and ensure the integrity of the database after the operation has complete.
+
+Which parameter should you specify in the DBCC CHECKDB command?
+
+Select only one answer.
+
+REPAIR_ALLOW_DATA_LOSS
+
+REPAIR_FAST
+
+REPAIR_REBUILD
+This answer is correct.
+Adding the REPAIR_REBUILD option to the DBCC CHECKDB command performs repairs that have no possibility of data loss. This option may include quick repairs, such as repairing missing rows in nonclustered indexes, and more time-consuming repairs, such as rebuilding an index.
+
+The REPAIR_FAST option maintains syntax for backward compatibility only. No repair actions are performed. The REPAIR_ALLOW_DATA_LOSS option can introduce some data loss in the database.
+
+DBCC CHECKDB (Transact-SQL) - SQL Server | Microsoft Learn
+
+Configure databases for optimal performance - Training | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 49 of 50
+
+You have an Azure SQL Managed Instance that contains a database named DB1. The database compatibility level for DB1 is 150.
+
+Queries that use table variables are performing poorly. You identify that the issue is caused by incorrect cardinality estimations.
+
+You need to configure an option to ensure that the database engine defines the cardinality estimate when the query is executed, and the actual row count is known.
+
+Which option should you configure?
+
+Select only one answer.
+
+DEFERRED_COMPILATION_TV
+This answer is correct.
+
+ELEVATE_ONLINE
+
+INTERLEAVED_EXECUTION_TVF
+
+TSQL_SCALAR_UDF_INLINING
+This answer is incorrect.
+You should use the DEFERRED_COMPILATION_TV option because it enables or disables table variable compilation.
+
+The INTERLEAVED_EXECUTION_TVF option enables or disables interleaved execution for multi-statement table-valued functions.
+
+The TSQL_SCALAR_UDF_INLINING option enables or disables the T-SQL Scalar UDF inlining.
+
+The ELEVATE_ONLINE option causes the engine to automatically elevate supported operations online.
+
+ALTER DATABASE SCOPED CONFIGURATION - SQL Server (Transact-SQL) | Microsoft Learn
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 50 of 50
+
+You plan to deploy a SQL Server on an Azure Virtual Machines instance running on a Windows Server operating system.
+
+You need to configure storage for the virtual machine. The solution must ensure the highest performance for the data files.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Set host caching to none.
+
+Set host caching to read-only.
+This answer is correct.
+
+Set host caching to read/write.
+
+Stripe multiple disks by using Storage Spaces.
+This answer is correct.
+
+Use Write Accelerator disks.
+This answer is incorrect.
+You should stripe multiple disks, as it will increase IOPS, as well as set host caching to read-only, as data files perform best by using this type of host caching.
+
+Setting host caching to none means that reads will not be cached, setting host caching to read/write will degrade performance and lead to data loss. Write Accelerator Disks should be used for transaction log disks.
+
+Storage: Performance best practices & guidelines - SQL Server on Azure VMs | Microsoft Learn
+
+Optimize database storage - Training | Microsoft Learn
+
+ 

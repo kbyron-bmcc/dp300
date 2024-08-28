@@ -1,0 +1,3 @@
+00:36:37	Kevin Byron:	practice quiz: https://learn.microsoft.com/sql/relational-databases/extended-events/sql-server-extended-events-packages?view=sql-server-ver16
+00:59:21	Paul A. Cordero:	https://www.techonthenet.com/sql/index.php
+01:39:18	Kevin Byron:	we are on a break until 749pm …

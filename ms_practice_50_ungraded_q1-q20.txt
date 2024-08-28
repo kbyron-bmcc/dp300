@@ -1,0 +1,457 @@
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 1 of 50
+
+You have an Azure SQL Database named db1.
+
+You need to provide access to db1 for a Microsoft Entra ID user .
+
+What should you do?
+
+Select only one answer.
+
+In db1, run the CREATE USER statement with the FROM EXTERNAL PROVIDER option.
+
+In db1, run the CREATE USER statement with the FROM LOGIN option.
+
+In the master database, run the CREATE LOGIN statement with the FROM EXTERNAL PROVIDER option.
+
+In the master database, run the CREATE LOGIN statement with the WITH PASSWORD option.
+
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 2 of 50
+
+You have an Azure SQL Database named db1 and a Microsoft Entra group named db_readers.
+
+You need to ensure that the members of db_readers can read data from db1. The solution must follow the principle of least privilege.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Assign the db_accessadmin role to the user in the master database.
+
+Assign the db_datareader role to the user in db1.
+
+Assign the db_datareader role to the user in the master database.
+
+Assign the db_denydatawriter role to the user in db1.
+
+Create a user in the db1 database for db_readers.
+
+Create a login and a user in the master database for db_readers.
+
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 3 of 50
+
+You have an Azure SQL Database named db1 that includes two custom roles named db1_readers and db2_writers. You have a Microsoft Entra group named dbadmin.
+
+You need to ensure that the members of the dbadmin group can manage the membership of db1_readers and db1_writers. The solution must follow the principle of least privilege.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Assign the database user the db_accessadmin role for the db1 database.
+
+Assign the database user the db_securityadmin role for the db1 database.
+
+Assign the database user the loginmanager role for the master database.
+
+Assign the database user the sysadmin role for the master database.
+
+Create a login and a database user in db1 for the dbadmin group.
+
+Create a login and a database user in the master database for the dbadmin group.
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 4 of 50
+
+You have an Azure SQL Database named db1.
+
+You need to ensure that all the data in db1 is encrypted at rest.
+
+What should you use?
+
+Select only one answer.
+
+Always Encrypted
+
+SQL Server auditing
+
+Microsoft Defender for SQL
+
+Transparent Data Encryption (TDE)
+
+
+ 
+Credentials
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 5 of 50
+
+You have three Azure SQL Databases named db1,db2 and db3.
+
+You need to configure network access to meet the following requirements:
+
+Allow db1 users to connect from the 10.0.1.0/24 network.
+
+Allow db2 users to connect from the 10.0.2.0/24 network.
+
+Prevent db1 and db2 users from accessing other databases.
+
+Which two actions can you perform? Each correct answer presents a complete solution.
+
+Select all answers that apply.
+
+Connect to db1 and run EXECUTE sp_set_database_firewall_rule Allow db1 users, '10.0.1.0', '10.0.1.255';.
+
+Connect to db2 and run EXECUTE sp_set_database_firewall_rule Allow db2 users, '10.0.2.0', '10.0.2.255';.
+
+Connect to the master database and run EXECUTE sp_set_database_firewall_rule Allow db1 users, '10.0.1.0', '10.0.1.255';.
+
+Connect to the master database and run EXECUTE sp_set_database_firewall_rule Allow db2 users, '10.0.2.0', '10.0.2.255';.
+
+Connect to the master database and run EXECUTE sp_set_firewall_rule Allow db1 and db2 users, '10.0.1.0', '10.0.2.255';.
+
+
+ 
+Credentials
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 6 of 50
+
+You have an Azure SQL Database named db1.
+
+You have an app named App1 that supports the latest TLS version.
+
+You need to ensure that App1 can access db1 in the most secure manner.
+
+What should you do?
+
+Select only one answer.
+
+Accept the default TLS version settings.
+
+Set the minimum TLS version setting to 1.0.
+
+Set the minimum TLS version setting to 1.2.
+
+
+ 
+Credentials
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 7 of 50
+
+You have an Azure SQL Database that contains a table named Employee. The table has columns that are masked by using dynamic data masking.
+
+When a user copies the Employee table by using the SELECT INTO command, the data is masked in a new table. The user must see the unmasked data in the new table.
+
+You need to grant the appropriate permissions to the user. The solution must follow the principle of least privilege.
+
+What should you grant to the user?
+
+Select only one answer.
+
+the ALTER ANY MASK permission
+
+the SELECT permission for the new table
+
+the UNMASK permission for the Employee table
+
+the UNMASK permission for the new table
+
+ 
+Credentials
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 8 of 50
+
+You have an Azure SQL Managed Instance that hosts a database. The database contains a column named Column1 that stores confidential information.
+
+You need to audit access to Column1. The solution must meet the following requirements:
+
+Retain audit data for at least eight years.
+
+Minimize administrative effort.
+
+Which three actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Apply a sensitivity classification to the column.
+
+Configure a Log Analytics audit log destination.
+
+Configure a Storage audit log destination.
+
+Enable Always Encrypted for the column.
+
+Enable Azure SQL Auditing.
+
+Enable Transparent Data Encryption (TDE).
+
+ 
+Credentials
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 9 of 50
+
+You have an Azure SQL Database named db1 that contains a table. The table contains a column that stores email addresses.
+
+You need to ensure that reporting users can only view email addresses in a format of aXXX@XXX.com. The solution must minimize the impact on other users.
+
+What should you configure?
+
+Select only one answer.
+
+Always Encrypted
+
+column encryption
+
+dynamic data masking
+
+row-level security (RLS)
+
+ 
+Credentials
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 10 of 50
+
+You have a data estate that includes multiple Azure SQL Databases.
+
+You need to audit the lifecycle of data across the estate. The solution must minimize administrative effort.
+
+What should you use?
+
+Select only one answer.
+
+Auditing for Azure SQL Database
+
+Azure Data Factory
+
+Microsoft Defender for SQL
+
+Microsoft Purview
+
+
+ 
+Credentials
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 11 of 50
+
+You need to recommend a high-availability and disaster recovery (HA/DR) strategy for a SQL Server on Azure Virtual Machines instance. The solution must meet the following requirements:
+
+All databases, including system databases, must be protected.
+SQL Server Agent jobs must be protected.
+Downtime must be minimized.
+The failover process must be done automatically.
+What should you include in the recommendation?
+
+Select only one answer.
+
+an Always On availability group
+
+an Always On failover cluster instance
+
+log shipping
+
+transactional replication
+
+ 
+Credentials
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 12 of 50
+
+You have 100 on-premises Microsoft SQL servers.
+
+You plan to migrate the servers to SQL Server on Azure Virtual Machines.
+
+You need to recommend a high-availability solution that will maintain availability if a datacenter fails.
+
+What should you include in the recommendation?
+
+Select only one answer.
+
+availability sets
+
+availability zones
+
+Azure Backup
+
+Azure Site Recovery
+
+ 
+Credentials
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 13 of 50
+
+You have an Azure SQL Managed Instance that contains a database named db1. You have a backup of db1.
+
+You need to restore db1 to the point in time of the backup.
+
+Which two actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Drop db1.
+
+Restore db1 from a file.
+
+Restore db1 from a URL.
+
+Set db1 to single-user mode.
+
+ 
+Credentials
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 14 of 50
+
+You have a SQL Server on Azure Virtual Machines instance.
+
+During a weekly maintenance task, you discover that a database named db1 has consistency errors.
+
+You plan to restore the database from backups.
+
+Which command should you run before you run the RESTORE command?
+
+Select only one answer.
+
+ALTER DATABASE db1 SET EMERGENCY
+
+ALTER DATABASE db1 SET OFFLINE
+
+ALTER DATABASE db1 SET RESTRICTED_USER
+
+ALTER DATABASE db1 SET SINGLE_USER
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 15 of 50
+
+You have an Azure SQL Database named db1.
+
+You need to configure a backup strategy to ensure that the db1 has backups retained for six years.
+
+What should you configure?
+
+Select only one answer.
+
+differential backup frequency
+
+long-term retention
+
+point-in-time-restore
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 16 of 50
+
+You have a Microsoft SQL Server 2019 instance.
+
+You are configuring a backup maintenance solution.
+
+You need to ensure that the databases can be restored to any point in time.
+
+Which two types of backups should you include? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+backup copy-only
+
+file
+
+filegroup
+
+full database
+
+transaction log
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 17 of 50
+
+You have a Microsoft SQL Server 2022 instance that contains several databases.
+
+You are planning a disaster recovery solution for the instance.
+
+You need to ensure that all databases can be restored to any point-in-time.
+
+Which three actions should you include in the solution? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Include a full database backup
+
+Include a log backup
+
+Set the bulk logged recovery model
+
+Set the Continue on error option
+
+Set the Copy-only backup option
+
+Set the full recovery model
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 18 of 50
+
+You have an Azure SQL logical server named SQL1 that hosts five databases.
+
+You need to ensure that you can restore the databases if SQL1 is deleted.
+
+What should you include in the solution?
+
+Select only one answer.
+
+accelerated database recovery
+
+Azure Backup
+
+elastic pools
+
+long-term backup retention
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 19 of 50
+
+You have an Azure SQL Database.
+
+You need to configure high availability for the database in the event of a regional outage.
+
+Which two features can you use? Each correct answer presents a complete solution.
+
+Select all answers that apply.
+
+active geo-replication
+
+Always On availability groups
+
+auto-failover groups
+
+long-term backup retention
+
+ 
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 20 of 50
+
+You have an Azure SQL Managed Instance that hosts five databases.
+
+You need to configure disaster recovery for the databases in the event of a regional outage.
+
+What can you use?
+
+Select only one answer.
+
+active geo-replication
+
+Always On availability groups
+
+auto-failover groups
+
+long-term backup retention
+
+ 
