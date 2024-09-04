@@ -1,0 +1,471 @@
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 21 of 50
+
+You have an Azure subscription that contains five virtual machines. The virtual machines host a Microsoft SQL Server 2019 Always On availability group named AG1.
+
+You need to enable monitoring for AG1. The solution must ensure that you can monitor the health of AG1 and diagnose performance issues.
+
+What should you use?
+
+Select only one answer.
+
+Intelligent Insights
+
+Query Performance Insight
+
+SQL Database Advisor
+
+SQL Insights
+
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 22 of 50
+
+You have a SQL Server on an Azure Virtual Machines instance.
+
+You need to configure an alert when a log truncation occurs in a database.
+
+Which type of alert should you configure?
+
+Select only one answer.
+
+SQL Server event alert
+
+SQL Server performance condition alert
+
+WMI event alert
+
+
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 23 of 50
+
+You have a SQL Server on Azure Virtual Machines instance.
+
+You need to ensure that an automated email is sent if a job fails. The solution must minimize administrative effort.
+
+Which three actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Create a Database Mail profile.
+
+Create an alert.
+
+Enable the mail profile on SQL Server Agent.
+
+Restart the SQL Server Agent service
+
+Restart the SQL Server service.
+
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 24 of 50
+
+You have an Azure SQL Managed Instance.
+
+You need to ensure that you receive a notification when a SQL Server Agent job fails.
+
+Which three actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Create a Database Mail account.
+
+Create a Database Mail profile.
+
+Create a SQL Server Agent proxy.
+
+Create a SQL Server credential.
+
+Enable Database Mail.
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 25 of 50
+
+You have a Microsoft SQL Server 2019 instance.
+
+You need to ensure that an alert is generated when a SQL error of severity 15 occurs.
+
+What should you use?
+
+Select only one answer.
+
+a SQL Server event alert
+
+a SQL Server performance alert
+
+an Extended Events session
+
+SQL Server Auditing
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 26 of 50
+
+You deploy a SQL Server on Azure Virtual Machines instance.
+
+You need to ensure that automated patching is enabled.
+
+Which two cmdlets should you run? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+New-AzVMConfig
+
+New-AzVMSqlServerAutoPatchingConfig
+
+Set-AzVMSqlServerExtension
+
+Set-AzVMCustomScriptExtension
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 27 of 50
+
+You have a bacpac file from an existing Microsoft SQL Server database. You copy the file to an Azure Storage account.
+
+You need to apply the bacpac file to an existing Azure SQL Database.
+
+Which command should you run?
+
+Select only one answer.
+
+az sql db create
+
+az sql db import
+
+az sql db restore
+
+az sql db update
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 28 of 50
+
+You have an Azure subscription that contains a resource group named RG1.
+
+You need to create an Azure SQL Managed Instance in RG1 by using PowerShell.
+
+Which cmdlet should you run?
+
+Select only one answer.
+
+New-AzSqlDatabase
+
+New-AzSqlInstance
+
+New-AzSqlServer
+
+Set-AzSqlInstance
+
+Set-AzSqlServer
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 29 of 50
+
+You have an Azure SQL Database named db1 that contains a table named Sales.
+
+You create an Azure Logic App.
+
+You need to configure the logic app to capture information when a new row is added to Sales.
+
+What should you configure in the logic app?
+
+Select only one answer.
+
+a Get rows action
+
+a When item is created trigger
+
+an Execute SQL statement action
+
+an Insert row action
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 30 of 50
+
+You have 20 on-premises Microsoft SQL Server instances.
+
+You need to migrate the instances to Azure. The solution must support auditing at the server level.
+
+Which two services can you use? Each correct answer presents a complete solution.
+
+Select all answers that apply.
+
+Azure SQL Database elastic pool
+
+Azure SQL Database Hyperscale
+
+Azure SQL Database serverless
+
+Azure SQL Managed Instance
+
+SQL Server on Azure Virtual Machines
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 31 of 50
+
+You plan to deploy an Azure SQL Database that will include a table named Table1. Table1 will include the following fields:
+
+StockItemTransactionID (Int)
+
+StockItemID (Int)
+
+TransactionTypeID (Int)
+
+CustomerID (Int)
+
+InvoiceID (Int)
+
+SupplierID (Int)
+
+PurchaseOrderID (Int)
+
+TransactionOccurredWhen (Datetime)
+
+Quantity (Int)
+
+LastEditedBy (Int)
+
+LastEditedWhen (Datetime)
+
+You need to recommend a partitioning method for the table. The solution must meet the following requirements:
+
+The data must be kept for 2 years.
+All data older than two years must be removed once a month.
+Performance of data removal operations must be maximized.
+Which three actions should you perform? Each correct answer presents part of the solution.
+
+Select all answers that apply.
+
+Create a partition function for each month.
+
+Create a partition function for each year.
+
+Create a partition schema for filegroups for each year.
+
+Create a partition schema for the PRIMARY filegroup.
+
+Create the table by using the partition schema on the StockItemTransactionID column.
+
+Create the table by using the partition schema on the TransactionOccurredWhen column.
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 32 of 50
+
+You are deploying a SQL Server on Azure Virtual Machines instance for a production environment. One of the databases in this instance has in-memory tables.
+
+You need to choose the most suitable virtual machine type for the deployment.
+
+What should you choose?
+
+Select only one answer.
+
+compute optimized
+
+general purpose
+
+GPU
+
+memory optimized
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 33 of 50
+
+You have an on-premises instance of Microsoft SQL Server 2019 that uses a SQL common language runtime (CLR) stored procedure to access a file share.
+
+You need to migrate the instance to Azure.
+
+To which Azure service should you migrate the instance?
+
+Select only one answer.
+
+Azure SQL Database Hyperscale
+
+Azure SQL Database serverless
+
+Azure SQL Managed Instance
+
+SQL Server on Azure Virtual Machines
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 34 of 50
+
+You have an Azure SQL Managed Instance that contains a database named db1.
+
+You need to implement table partitioning for a table in db1.
+
+You create the filegroups.
+
+What should you do next?
+
+Select only one answer.
+
+Create a partition function, create a partition scheme, and then create a table on the partition function.
+
+Create a partition function, create a partition scheme, and then create a table on the partition scheme.
+
+Create a partition function, create a table on the partition function, and then change the fill factor settings on indexes.
+
+Create a partition scheme, create a table on the partition scheme, and then change the fill factor settings on indexes.
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 35 of 50
+
+You have an Azure SQL Database that is only used to process data for three hours a day. Currently, the database has the Standard S3 (100 DTU) service tier configured.
+
+You need to recommend a solution that will increase the performance without increasing the cost.
+
+Which database service tier do you recommend?
+
+Select only one answer.
+
+Premium
+
+Business Critical vCore
+
+Hyperscale vCore
+
+vCore serverless
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 36 of 50
+
+You have an on-premises SQL Server database that is used as part of a mission critical app.
+
+You plan to migrate the database to SQL Server on Azure Virtual Machines.
+
+You need to configure the disks for the virtual machine. The solution must meet the following requirements:
+
+Maximize throughput.
+
+Minimize latency.
+
+Which type of disk should you use?
+
+Select only one answer.
+
+Premium SSD
+
+Standard HDD
+
+Standard SSD
+
+Ultra disk
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 37 of 50
+
+You are planning a migration from on-premises Microsoft SQL Server to Azure using Azure Database Migration Service.
+
+You need to keep databases online during the migration.
+
+Which two services can you use? Each correct answer presents a complete solution.
+
+Select all answers that apply.
+
+Azure Cosmos DB
+
+Azure SQL Database
+
+Azure SQL Managed Instance
+
+SQL Server on Azure Virtual Machines
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 38 of 50
+
+You have a database in an Azure SQL Managed Instance.
+
+You need to synchronize data from five tables in the database to an Azure SQL Database. Any subsequent data changes must be visible in the Azure SQL Database as quickly as possible.
+
+Which migration method should you use?
+
+Select only one answer.
+
+Azure Data Factory
+
+BCP
+
+change data capture
+
+transactional replication
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 39 of 50
+
+You have an on-premises Microsoft SQL Server 2019 instance.
+
+You need to migrate the instance to an Azure SQL Managed Instance. The solution must minimize downtime.
+
+What should you do first?
+
+Select only one answer.
+
+Create an Azure SQL Managed Instance with premium series hardware. Create full and log backups with WITH CHECKSUM. Store the backups in an SMB network share.
+
+Create an Azure SQL Managed Instance with premium series hardware. Create full and log backups WITH FILE_SNAPSHOT.. Store the backups in Azure Blob storage.
+
+Create an Azure SQL Managed Instance with standard series hardware. Create full and log backups WITH CHECKSUM. Store the backups in an SMB network share.
+
+Create an Azure SQL Managed Instance with standard series hardware. Create full and log backups WITH FILE_SNAPSHOT. Store the backups in Azure Blob storage.
+
+ 
+
+Practice Assessment for Exam DP-300: Administering Microsoft Azure SQL Solutions
+Question 40 of 50
+
+You have an on-premises Microsoft SQL Server 2019 instance that hosts 10 databases.
+
+You plan to migrate the databases to Azure SQL Database.
+
+You need to validate the compatibility of the databases with Azure SQL Database.
+
+Which two tools can you use? Each correct answer presents a complete solution.
+
+Select all answers that apply.
+
+App and Data Modernization Readiness Tool
+
+Data Migration Assistant (DMA)
+
+Microsoft Assessment and Planning (MAP) Toolkit for SQL Server
+
+the Azure Migrate Discovery and assessment tool
+
+the SQL Server Management Studio (SSMS) Copy Database Wizard
