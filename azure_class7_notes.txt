@@ -1,0 +1,32 @@
+azure_class7_notes.txt
+wed 9/4/24
+
+1. take attendance
+
+2. review labs 1 through 10 completion status
+
+3. ungraded questions 21-40 from microsoft-50 practice exam are posted in github
+
+4. cloud labs practice exam questions 21-40 in class last week
+ 
+    so far questions 21..28: score is 70/96 = 72% 
+    review incorrect answers
+
+5. continue cloud labs practice exam questions 21-40 in class 
+
+6. review pdf documents for labs 11 & 12 in class
+
+   json syntax chart: https://www.json.org
+   JSON (JavaScript Object Notation) is a lightweight data-interchange format. 
+   It is easy for humans to read and write.
+
+7. session 7 slides
+
+8. run labs 11 & 12 in class
+
+9. 2nd live cloudlabs practice exam from 7-9pm ... high scores to be posted
+
+
+
+
+ 
