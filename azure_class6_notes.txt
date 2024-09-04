@@ -1,0 +1,29 @@
+azure_class6_notes.txt
+wed 8/28/24
+
+1. take attendance
+
+2. labs 1 through 8 completion status
+
+3. no class monday 9/2/24 - labor day
+
+4. next class wed 9/4/24 will be 2nd live cloudlabs practice exam from 7-9pm ... homework: learn the 80 questions
+
+5. graded microsoft-50 practice exam posted in github
+
+   ref: https://learn.microsoft.com/en-us/credentials/certifications/azure-database-administrator-associate/practice/assessment?assessment-type=practice&assessmentId=58&practice-assessment-type=certification&source=docs
+
+6. ungraded questions 1-20 from microsoft-50 practice exam posted in github
+
+7. session 6 slides
+
+8. review & begin labs 9 & 10
+
+9. cloud labs practice exam questions 21-40 in class 
+
+
+
+
+
+
+ 
