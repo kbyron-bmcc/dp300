@@ -8,11 +8,13 @@ wed 9/4/24
 3. ungraded questions 21-40 from microsoft-50 practice exam are posted in github
 
 4. cloud labs practice exam questions 21-40 in class last week
- 
-    so far questions 21..28: score is 70/96 = 72% 
+    
+    so far questions 21..28: score is 70/96 = 72%
     review incorrect answers
 
 5. continue cloud labs practice exam questions 21-40 in class 
+
+    for questions 21..40: score is 170/248 = 69%
 
 6. review pdf documents for labs 11 & 12 in class
 
@@ -24,7 +26,7 @@ wed 9/4/24
 
 8. run labs 11 & 12 in class
 
-9. 2nd live cloudlabs practice exam from 7-9pm ... high scores to be posted
+9. 2nd live cloudlabs practice exam from 7-9pm ... high scores will be posted
 
 
 
