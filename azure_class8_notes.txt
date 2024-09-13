@@ -1,0 +1,32 @@
+azure_class8_notes.txt
+mon 9/9/24
+
+1. take attendance
+
+2. review labs 1 through 12 completion status
+
+3. results from practice exam2
+
+     exam1 pass%: 3/14 = 21%
+     exam2 pass%: 5/8 = 63%
+
+     exam1 high scorers: 1
+     exam2 high scorers: 1
+
+     top 3 most improved over exam1: 84%, 55%, 26% 
+
+4. Errors in Cloudlabs portal make lab execution difficult.
+
+5. session 7 slides
+
+6. session 8 slides
+
+7. exam 50q results: doc & html
+
+8. increase practice exam count from 5 to 12
+
+
+
+
+
+ 

@@ -1,0 +1,43 @@
+azure_class9_notes.txt
+wed 9/11/24
+
+1. take attendance
+
+2. review labs 1 through 13 completion status
+
+3. increased practice exam count from 5 to 12
+
+4. to be posted in github:
+   - azure_class8_notes.txt
+   - azure_class9_notes.txt
+   - exam_50q_results_1.doc
+   - exam_50q_results_1.html  
+   - cloudlabs_lab_links_9-9-2024.txt
+   (uploads currently disabled: "File uploads require push access to this repository."?)
+
+7. Errors in Cloudlabs portal corrected
+
+8. reminder: to practice labs at your leisure:
+   https://github.com/CloudLabs-MOC/dp-300-database-administrator > instructions > labs
+   https://azure.microsoft.com/en-us/free
+
+9. hw: (1) review https://learn.microsoft.com/en-us/credentials/certifications/prepare-exam
+       (2)        https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-300
+       (3) learn CloudLabs 80q exam: practice exam #3 Monday 7pm-9pm  ... who will have the 1st perfect score?
+
+10. Review lab 10 steps
+
+11. Review lab 12 steps
+
+12. Review lab 13 steps
+
+13. session 8 slides
+
+14. session 9 slides .. next week
+
+
+
+
+
+
+ 
