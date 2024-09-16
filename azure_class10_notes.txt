@@ -1,0 +1,39 @@
+azure_class10_notes.txt
+mon 9/16/24
+
+1. take attendance
+
+2. review labs 1 through 14 completion status
+
+3. github upload issue resolved
+
+4. lab15 tips
+   a. use notepad to prepare cli commands
+   b. use ctrl-shift-v to paste to cli terminal
+   c. consider split-window option to separate lab guide window from virtual machine window
+
+5. practice exam #3 today at 7pm
+
+6. practice exam #4 on last day of class#14 monday 9/30/24
+
+7. hw: (1) review https://learn.microsoft.com/en-us/credentials/certifications/prepare-exam
+           explore exam sandbox
+       (2) https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-300
+            exam readiness zone - videos for dp300 along with live azure portal
+            watch the videos; learn practice questions at end of videos
+       (3) learn CloudLabs 80q exam
+       (4) learn Microsoft 50q exam
+           score in class tonight: 6.5/8 = 81% - passing!
+        
+8. session 8 slides
+
+9. session 9 slides 
+
+10. session 10 slides
+
+
+
+
+
+
+ 
