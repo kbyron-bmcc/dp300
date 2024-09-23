@@ -1,0 +1,52 @@
+azure_class11_notes.txt
+wed 9/18/24
+
+1. take attendance
+
+2. review labs 1 through 15 completion status
+
+3. exam attempt #3 analysis
+
+4. practice exam #4 on last day of class#14 monday 9/30/24
+
+5. cloud labs 80 question exam learning tip
+   - print questions without answers one question per sheet of paper 
+   - repeat
+      (1) pick a sheet randomly and choose an answer
+      (2) if the answer is correct, put the sheet in pile 1
+      (3) if the answer is not correct, put the sheet in pile 2 
+      (4) repeat steps 1,2,3 with pile 2
+     until there are no questions answered incorrectly 
+   - do the above process 3 times a day, each day, before the exam
+
+6. microsoft 50 question exam learning tip 
+   - repeat 
+       start exam
+       answer all questions
+       check your score
+     until your score is 100%
+   - do the above process 3 times a day, each day, before the exam
+     
+7. hw: (1) review https://learn.microsoft.com/en-us/credentials/certifications/prepare-exam
+           explore exam sandbox
+       (2) https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-300
+            exam readiness zone - videos for dp300 along with live azure 
+            watch the videos; learn practice questions at end of videos
+       (3) learn CloudLabs 80q exam
+       (4) learn Microsoft 50q exam
+        
+8. lab15 tips
+   a. use notepad to prepare cli commands
+   b. use ctrl-shift-v to paste to cli terminal
+   c. consider split-window option to separate lab guide window from virtual machine window
+
+9. session 8 slides - lab 10 variation using sub-optimal query (in progress)
+
+10. lab 14 
+
+11. avg tonight on microsoft practice exam: 16.67/22=76
+
+
+
+
+ 
