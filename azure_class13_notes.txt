@@ -1,0 +1,58 @@
+azure_class13_notes.txt
+wed 9/25/24
+
+1. take attendance
+
+2. review labs 1 through 15 completion status
+
+3. practice exam #4 on last day of class#14 monday 9/30/24
+
+4. powershell commands to create an Azure SQL database using lab 11
+
+ref: 
+  https://learn.microsoft.com/en-us/azure/azure-sql/database/scripts/create-and-configure-database-powershell?view=azuresql
+
+start Cloudlabs Lab 11 to deploy Azure sql database from template
+install Powershell 7 and Azure module per class 12 notes
+
+get-azcontext
+
+$SubscriptionId = 'fd3bfa4a-fda2-4e3b-9341-52cf1abcddc7'
+$resourceGroupName = 'rg925'
+$location = "westeurope"
+$adminSqlLogin = "SqlAdmin"
+$password = "Password925"
+$serverName = "server-$(Get-Random)"
+$databaseName = "mySampleDatabase"
+$startIp = "0.0.0.0"
+$endIp = "0.0.0.0"
+$resourceGroup = New-AzResourceGroup -Name $resourceGroupName -Location $location
+$server = New-AzSqlServer -ResourceGroupName $resourceGroupName -ServerName $serverName -Location $location -SqlAdministratorCredentials $(New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $adminSqlLogin, $(ConvertTo-SecureString -String $password -AsPlainText -Force))
+Get-AzResource | convertto-json > myresources.txt
+gc .\myresources.txt | sls data
+gc .\myresources.txt | sls mysampledatabase
+
+at Azure portal:
+  search for resource-group > choose rg925
+  click on server resource
+  search for sql-databases > choose sql-databases
+  click in mySampleDatabase
+  click query editor
+  enter credentials
+  enter query 
+    "SELECT GETDATE() AS TimeOfQuery;"
+    "select * from [dbo].[TableName];"          
+
+
+5. session 9 slides 
+
+6. session 10 slides 
+
+7. session 11 slides 
+
+8. session 12 slides 
+
+9. take Microsoft practice quiz
+
+
+
