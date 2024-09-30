@@ -1,0 +1,35 @@
+azure_class14_notes.txt
+mon 9/30/24
+
+1. take attendance
+
+2. review labs 1 through 15 completion status
+
+3. create a new on-prem SQL database and table using lab 7
+
+ref: 
+  https://www.itprotoday.com/powershell/how-to-connect-to-sql-server-database-from-powershell
+Note:
+  article suggests using invoke-sqlcmd to access the on-prem database ... there is an unresolved problem with credentials
+
+start Cloudlabs Lab 7 to detect and correct fragmentation issues
+
+start powershell version 5.1 and verify invoke-sqlcmd is available:
+
+$PSVersionTable.PSVersion
+invoke-sqlcmd
+get-command -module sqlserver
+
+start ssms > run sample query "select getdate()"
+
+create new database "students" > create new table "myclass" > populate table
+
+run sample query "use students; select * from myclass"
+
+try invoke-sqlcmd in powershell ... 
+
+invoke-sqlcmd -serverinstance "sqlvm-1470873" -database "students" -username "sqlvm-1470873\azuser" -query "select 23"
+
+4. practice exam #4 on today 7pm
+
+Good Luck!
